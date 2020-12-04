@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/hello-world/index.html</url>
+    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo博客搭建</title>
+    <url>/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html</url>
+    <content><![CDATA[<h1 id="Github部署"><a href="#Github部署" class="headerlink" title="Github部署"></a>Github部署</h1><p>Github仓库用于部署hexo网页静态文件。</p>
+<p>创建一个仓库，名为：username.github.io</p>
+<p>这里username必须是github账户名</p>
+<h1 id="Hexo-配置"><a href="#Hexo-配置" class="headerlink" title="Hexo 配置"></a>Hexo 配置</h1><ol>
+<li><p>在本地创建一个文件夹，用来安装hexo，我的文件夹名称和github仓库名相同。然后在该文件夹下打开终端，输入命令进行hexo 安装。</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">init</span> <span class="meta"># 安装hexo</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在文件夹下会生成一些文件：</p>
+<p>为防止乱码，需要将_config.yml文件，scaffolds文件夹下的三个文件编码格式改为utf-8.</p>
+<p><img src="hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20201202221042109.png" alt="image-20201202221042109"></p>
+</li>
+<li><p>创建一个git版本库，用于将修改的文件push到github.</p>
+</li>
+<li><p>修改_config.yml文件中的属性</p>
+</li>
+<li><p>生成静态页面</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo</span> g <span class="comment"># 生成静态页面</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>预览页面</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo</span> s <span class="comment"># 预览页面</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20201202222749837.png" alt="image-20201202222749837"></p>
+<p>在浏览器中输入 <a class="link"   href="http://localhost:4000/" >http://localhost:4000<i class="fas fa-external-link-alt"></i></a> 就可以预览啦。</p>
+</li>
+<li><p>新建博客</p>
+<figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="type"></span>文件名</span><br></pre></td></tr></table></figure>
+
+<p><img src="hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20201202223054050.png" alt="image-20201202223054050"></p>
+</li>
+</ol>
+<h1 id="博客更改推送到github"><a href="#博客更改推送到github" class="headerlink" title="博客更改推送到github"></a>博客更改推送到github</h1><ol>
+<li><p>先生成静态页面</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo d</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<h1 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h1><p>我的主题用的是ils</p>
+<p>可参见博客：</p>
+<p><a class="link"   href="https://xpoet.cn/2020/04/%E5%8D%83%E5%91%BC%E4%B8%87%E5%94%A4%E5%A7%8B%E5%87%BA%E6%9D%A5%EF%BC%8CHexo%E4%B8%BB%E9%A2%98ILS%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83/" >https://xpoet.cn/2020/04/%E5%8D%83%E5%91%BC%E4%B8%87%E5%94%A4%E5%A7%8B%E5%87%BA%E6%9D%A5%EF%BC%8CHexo%E4%B8%BB%E9%A2%98ILS%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83/<i class="fas fa-external-link-alt"></i></a></p>
+<p>还需要更新下博客的分类及评论功能</p>
+<p>还有图片保存路径问题。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a class="link"   href="https://easyhexo.com/1-Hexo-install-and-config/" >https://easyhexo.com/1-Hexo-install-and-config/<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/%E6%B5%8B%E8%AF%95/index.html</url>
+    <content><![CDATA[<img src="%E6%B5%8B%E8%AF%95.assets/image-20201204140950858.png" alt="image-20201204140950858" style="zoom:67%;" />]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+</search>
